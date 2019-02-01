@@ -1,4 +1,4 @@
-GCC=clang-7
+GCC=gcc
 CFLAGS=-g -ansi -pedantic -Wall -no-pie -pg
 
 goodbye: goodbye.c
@@ -55,8 +55,11 @@ pi: pi.c
 acslist: acslist.c
 	$(GCC) $(CFLAGS) -o acslist acslist.c -lncurses
 
+unicode: unicode.c
+	$(GCC) $(CFLAGS) -o unicode unicode.c -lcurses
+
 clean:
 	$(RM) *.o *.out add1 add2 add3 goodbye yoda typewriter
 	$(RM) yourname twinkle annoy colortest yellowred colorful
-	$(RM) pink bgcolor1 bgcolor2 attrtest pi acslist
+	$(RM) pink bgcolor1 bgcolor2 attrtest pi acslist unicode
 

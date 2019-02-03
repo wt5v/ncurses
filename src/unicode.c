@@ -19,6 +19,7 @@ int main()
 
     addstr("I ");
     add_wch(&heart);
+
     addstr(" Ncurses!\n");
 
     refresh();

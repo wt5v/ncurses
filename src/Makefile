@@ -1,5 +1,6 @@
 GCC=gcc
 CFLAGS=-g -ansi -pedantic -Wall -no-pie -pg
+INCLUDE=-I/usr/lib/ncursesw
 
 goodbye: goodbye.c
 	$(GCC) $(CFLAGS) -o goodbye goodbye.c -lncurses
@@ -56,7 +57,7 @@ acslist: acslist.c
 	$(GCC) $(CFLAGS) -o acslist acslist.c -lncurses
 
 unicode: unicode.c
-	$(GCC) $(CFLAGS) -o unicode unicode.c -lcurses
+	$(GCC) $(CFLAGS) $(INCLUDE) -o unicode unicode.c -lncurses
 
 clean:
 	$(RM) *.o *.out add1 add2 add3 goodbye yoda typewriter

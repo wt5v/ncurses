@@ -57,10 +57,14 @@ acslist: acslist.c
 	$(GCC) $(CFLAGS) -o acslist acslist.c -lncurses
 
 unicode: unicode.c
-	$(GCC) $(CFLAGS) $(INCLUDE) -o unicode unicode.c -lncurses
+	$(GCC) $(CFLAGS) $(INCLUDE) -o unicode unicode.c -lncursesw
+
+ustring: ustring.c
+	$(GCC) $(CFLAGS) $(INCLUDE) -o ustring ustring.c -lncursesw
 
 clean:
 	$(RM) *.o *.out add1 add2 add3 goodbye yoda typewriter
 	$(RM) yourname twinkle annoy colortest yellowred colorful
 	$(RM) pink bgcolor1 bgcolor2 attrtest pi acslist unicode
+	$(RM) ustring
 

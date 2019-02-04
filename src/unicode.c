@@ -3,7 +3,7 @@
  */
 
 #define _XOPEN_SOURCE_EXTENDED 1
-#include <curses.h>
+#include <ncurses.h>
 #include <locale.h>
 
 int main()

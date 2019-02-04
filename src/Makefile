@@ -72,5 +72,5 @@ clean:
 	$(RM) *.o *.out add1 add2 add3 goodbye yoda typewriter
 	$(RM) yourname twinkle annoy colortest yellowred colorful
 	$(RM) pink bgcolor1 bgcolor2 attrtest pi acslist unicode
-	$(RM) ustring
+	$(RM) ustring screensize ctitle
 

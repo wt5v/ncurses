@@ -62,6 +62,12 @@ unicode: unicode.c
 ustring: ustring.c
 	$(GCC) $(CFLAGS) $(INCLUDE) -o ustring ustring.c -lncursesw
 
+screensize: screensize.c
+	$(GCC) $(CFLAGS) $(INCLUDE) -o screensize screensize.c -lncurses
+
+ctitle: ctitle.c
+	$(GCC) $(CFLAGS) $(INCLUDE) -o ctitle ctitle.c -lncurses
+
 clean:
 	$(RM) *.o *.out add1 add2 add3 goodbye yoda typewriter
 	$(RM) yourname twinkle annoy colortest yellowred colorful

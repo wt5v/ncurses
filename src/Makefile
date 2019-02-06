@@ -68,9 +68,12 @@ screensize: screensize.c
 ctitle: ctitle.c
 	$(GCC) $(CFLAGS) $(INCLUDE) -o ctitle ctitle.c -lncurses
 
+ncurses_chars: ncurses_chars.c
+	$(GCC) $(CFLAGS) $(INCLUDE) -o ncurses_chars ncurses_chars.c -lncurses
+
 clean:
 	$(RM) *.o *.out add1 add2 add3 goodbye yoda typewriter
 	$(RM) yourname twinkle annoy colortest yellowred colorful
 	$(RM) pink bgcolor1 bgcolor2 attrtest pi acslist unicode
-	$(RM) ustring screensize ctitle
+	$(RM) ustring screensize ctitle ncurses_chars
 

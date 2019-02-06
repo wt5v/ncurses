@@ -52,7 +52,7 @@ void center(int row, char *title)
 	exit(EXIT_FAILURE);
 
     for(pos = 0; pos < indent - 1; pos++)
-	mvaddch(row, pos, '-');
+	mvaddch(row, pos, ACS_HLINE);
 
     addch('[');
 
@@ -60,7 +60,7 @@ void center(int row, char *title)
     mvaddch(row, pos + (len+1), ']');
 
     for(pos += (len + 2); pos < width; pos++)
-	mvaddch(row, pos, '-');
+	mvaddch(row, pos, ACS_HLINE); 
 
     refresh();
 }

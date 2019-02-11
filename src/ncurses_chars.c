@@ -3,16 +3,17 @@
  */
 #include <ncurses.h>
 
-void color_char(int c);
+void color_char(chtype c);
 
 int main(void)
 {
         initscr();
 	start_color();
 	init_pair(1, COLOR_GREEN, COLOR_BLACK);
+	init_pair(2, COLOR_CYAN, COLOR_BLACK);
 
-        attrset(A_UNDERLINE | A_BOLD);
-        mvprintw(0,35,"NCURSES EXTENDED CHARACTERS\n\n");
+        attrset(COLOR_PAIR(2) | A_BOLD);
+        printw(0,35,"NCURSES EXTENDED CHARACTERS\n\n", ACS_RTEE, ACS_LTEE);
         attrset(A_NORMAL);
 
         printw("Upper left corner         "); color_char(ACS_ULCORNER); printw("  ACS_ULCORNER\t\t");
@@ -54,7 +55,7 @@ int main(void)
         return 0;
 }
 
-void color_char(int c)
+void color_char(chtype c)
 {
 	attrset(COLOR_PAIR(1) | A_BOLD); 
 	addch(c);

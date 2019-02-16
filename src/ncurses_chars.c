@@ -13,7 +13,7 @@ int main(void)
 	init_pair(2, COLOR_CYAN, COLOR_BLACK);
 
         attrset(COLOR_PAIR(2) | A_BOLD);
-        printw(0,35,"NCURSES EXTENDED CHARACTERS\n\n", ACS_RTEE, ACS_LTEE);
+        mvprintw(0,35,"NCURSES EXTENDED CHARACTERS\n\n");
         attrset(A_NORMAL);
 
         printw("Upper left corner         "); color_char(ACS_ULCORNER); printw("  ACS_ULCORNER\t\t");

@@ -15,7 +15,6 @@ int main(void)
     attrset(COLOR_PAIR(2) | A_STANDOUT);
     mvprintw(0,35,"NCURSES EXTENDED CHARACTERS\n\n");
     attrset(A_NORMAL);
-
     printw("Upper left corner         ");
     color_char(ACS_ULCORNER);
     printw("  ACS_ULCORNER\t\t");

@@ -1,4 +1,4 @@
-GCC=gcc
+GCC=clang-7
 CFLAGS=-g -ansi -pedantic -Wall -no-pie -pg
 INCLUDE=-I/usr/lib/ncursesw
 LDFLAGS=-lncurses

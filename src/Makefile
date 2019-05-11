@@ -72,8 +72,21 @@ ctitle: ctitle.c
 ncurses_chars: ncurses_chars.c
 	$(GCC) $(CFLAGS) $(INCLUDE) -o ncurses_chars ncurses_chars.c $(LDFLAGS)
 
+winboard: winboard.c
+	$(GCC) $(CFLAGS) $(INCLUDE) -o winboard winboard.c $(LDFLAGS)
+
+moreboard: moreboard.c
+	$(GCC) $(CFLAGS) $(INCLUDE) -o moreboard moreboard.c $(LDFLAGS)
+
+colors: colors.c
+	$(GCC) $(CFLAGS) $(INCLUDE) -o colors colors.c $(LDFLAGS)
+
+menu: menu.c
+	$(GCC) $(CFLAGS) $(INCLUDE) -o menu menu.c $(LDFLAGS)
+
 clean:
 	$(RM) *.o *.out add1 add2 add3 goodbye yoda typewriter
 	$(RM) yourname twinkle annoy colortest yellowred colorful
 	$(RM) pink bgcolor1 bgcolor2 attrtest pi acslist unicode
-	$(RM) ustring screensize ctitle ncurses_chars
+	$(RM) ustring screensize ctitle ncurses_chars winboard
+	$(RM) moreboard colors menu

@@ -1,4 +1,4 @@
-/* 
+/*
  * menu.c
  */
 
@@ -44,37 +44,37 @@ int main()
     print_menu(menu_win, highlight);
     while (1)
     {
-	c = wgetch(menu_win);
-	switch (c)
-	{
-	    case KEY_UP:
-		if (highlight == 1)
-		    highlight = n_choices;
-		else
-		    --highlight;
-		break;
-	    case KEY_DOWN: 
-		if (highlight == n_choices)
-		    highlight = 1;
-		else
-		    ++highlight;
-		break;
-	    case 10:
-		choice = highlight;
-		mvprintw(23, 0, "You chose choice %d with a choice string %s\n", choice, choices[choice - 1]);
-		clrtoeol();
-		refresh();
-		break;
-	    default:
-		mvprintw(24, 0, "Character pressed is = %3d Hopefully it can be printed as '%c'", c, c);
-		refresh();
-		break;
-	}
-	print_menu(menu_win, highlight);
-	if (choice == 5)
-	    break;
+        c = wgetch(menu_win);
+        switch (c)
+        {
+        case KEY_UP:
+            if (highlight == 1)
+                highlight = n_choices;
+            else
+                --highlight;
+            break;
+        case KEY_DOWN:
+            if (highlight == n_choices)
+                highlight = 1;
+            else
+                ++highlight;
+            break;
+        case 10:
+            choice = highlight;
+            mvprintw(23, 0, "You chose choice %d with a choice string %s\n", choice, choices[choice - 1]);
+            clrtoeol();
+            refresh();
+            break;
+        default:
+            mvprintw(24, 0, "Character pressed is = %3d Hopefully it can be printed as '%c'", c, c);
+            refresh();
+            break;
+        }
+        print_menu(menu_win, highlight);
+        if (choice == 5)
+            break;
     }
-    /* mvprintw(23, 0, "You chose choice %d with a choice string %s\n", choice, choices[choice - 1]); 
+    /* mvprintw(23, 0, "You chose choice %d with a choice string %s\n", choice, choices[choice - 1]);
     refresh(); */
     getch();
     endwin();
@@ -90,21 +90,16 @@ void print_menu(WINDOW *menu_win, int highlight)
     box(menu_win, 0, 0);
     for(i = 0; i < n_choices; ++i)
     {
-	if (highlight == i + 1)
-	{
-	    wattron(menu_win, A_REVERSE);
-	    mvwprintw(menu_win, y, x, "%s", choices[i]);
-	    wattroff(menu_win, A_REVERSE);
-	}
-	else
-	    mvwprintw(menu_win, y, x, "%s", choices[i]);
-	++y;
+        if (highlight == i + 1)
+        {
+            wattron(menu_win, A_REVERSE);
+            mvwprintw(menu_win, y, x, "%s", choices[i]);
+            wattroff(menu_win, A_REVERSE);
+        }
+        else
+            mvwprintw(menu_win, y, x, "%s", choices[i]);
+        ++y;
     }
     wrefresh(menu_win);
 }
 
-
-
-
-
-	

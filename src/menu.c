@@ -39,7 +39,8 @@ int main()
 
     menu_win = newwin(HEIGHT, WIDTH, starty, startx);
     keypad(menu_win, TRUE);
-    mvprintw(0, 0, "Use arrow keys to go up and down, Press enter to select a choice");
+    mvprintw(0, 0, "Use arrow keys to go up and down, "\
+	     "Press enter to select a choice");
     refresh();
     print_menu(menu_win, highlight);
     while (1)
@@ -61,12 +62,16 @@ int main()
             break;
         case 10:
             choice = highlight;
-            mvprintw(23, 0, "You chose choice %d with a choice string %s\n", choice, choices[choice - 1]);
+            mvprintw(23, 0, "You chose choice %d with " \
+		     "a choice string %s\n", 
+		     choice, choices[choice - 1]);
             clrtoeol();
             refresh();
             break;
         default:
-            mvprintw(24, 0, "Character pressed is = %3d Hopefully it can be printed as '%c'", c, c);
+            mvprintw(24, 0, "Character pressed is = %3d "\
+		     "Hopefully it can be printed as "\
+		     "'%c'", c, c);
             refresh();
             break;
         }
@@ -74,8 +79,9 @@ int main()
         if (choice == 5)
             break;
     }
-    /* mvprintw(23, 0, "You chose choice %d with a choice string %s\n", choice, choices[choice - 1]);
-    refresh(); */
+    /* mvprintw(23, 0, "You chose choice %d with a 
+       choice string %s\n", choice, choices[choice - 1]);
+       refresh(); */
     getch();
     endwin();
     return 0;
